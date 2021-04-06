@@ -1,0 +1,2 @@
+[aws]
+65.0.45.208 ansible_user=ec2-user
