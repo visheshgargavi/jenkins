@@ -93,15 +93,17 @@
   - name: Install Flannel pod network
     shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
-  - name: Generate join command
-    command: kubeadm token create --print-join-command
-    register: join_command
 
-  - name: print token
-    debug:
-      var: join_command
+  -  name: "Creating Token for Slaves"
+           command: 
+                cmd: "kubeadm token create --print-join-command"
+           register: token_result
 
-  - name: Copy join command to local file
-    local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
-
+  -  name: "Adding token to a File"
+           lineinfile:
+                insertafter: #token
+                line: "token: {{ token_result.stdout }}"  
+                dest: "{{ token.sh }}"
+                state: present
+           delegate_to: localhost
 
