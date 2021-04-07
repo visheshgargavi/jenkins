@@ -6,16 +6,16 @@
   become: true
   tasks:  
   - name: Remove docker if installed from CentOS repo
-      yum:
-         name:
-          - docker-client
-          - docker-client-latest
-          - docker-common
-          - docker-latest
-          - docker-latest-logrotate
-          - docker-logrotate
-          - docker-engine
-         state: removed
+    yum:
+       name:
+        - docker-client
+        - docker-client-latest
+        - docker-common
+        - docker-latest
+        - docker-latest-logrotate
+        - docker-logrotate
+        - docker-engine
+       state: removed
 
   - name: installing docker software
     package:
