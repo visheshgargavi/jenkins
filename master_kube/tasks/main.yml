@@ -103,7 +103,7 @@
            lineinfile:
                 insertafter: #token
                 line: "token: {{ token_result.stdout }}"  
-                dest: "{{ token.sh }}"
+                dest: "{{ token.yml }}"
                 state: present
            delegate_to: localhost
 
