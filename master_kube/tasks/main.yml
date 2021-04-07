@@ -98,6 +98,10 @@
      command: 
        cmd: "kubeadm token create --print-join-command"
      register: token_result
+     
+  - name: print token
+    debug:
+      var: token_result
 
   -  name: "Adding token to a File"
      lineinfile:
