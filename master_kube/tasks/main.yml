@@ -95,15 +95,15 @@
 
 
   -  name: "Creating Token for Slaves"
-           command: 
-                cmd: "kubeadm token create --print-join-command"
-           register: token_result
+     command: 
+       cmd: "kubeadm token create --print-join-command"
+     register: token_result
 
   -  name: "Adding token to a File"
-           lineinfile:
-                insertafter: #token
-                line: "token: {{ token_result.stdout }}"  
-                dest: "{{ token.yml }}"
-                state: present
-           delegate_to: localhost
+     lineinfile:
+       insertafter: #token
+       line: "token: {{ token_result.stdout }}"  
+       dest: "{{ token.yml }}"
+       state: present
+     delegate_to: localhost
 
