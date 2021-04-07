@@ -1,2 +1,5 @@
 [aws]
-13.232.205.92 ansible_user=ec2-user
+13.235.128.68 ansible_user=ec2-user
+
+[aws1]
+13.233.161.89 ansible_user=ec2-user
