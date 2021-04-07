@@ -101,7 +101,7 @@
 
   -  name: "Adding token to a File"
      lineinfile:
-       insertafter: #token
+       insertafter: "#token"
        line: "token: {{ token_result.stdout }}"  
        dest: "{{ /var/lib/jenkins/workspace/k8s/token.yml }}"
        state: present
