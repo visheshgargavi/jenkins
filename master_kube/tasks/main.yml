@@ -103,7 +103,7 @@
      lineinfile:
        insertafter: #token
        line: "token: {{ token_result.stdout }}"  
-       dest: "{{ token.yml }}"
+       dest: "{{ /var/lib/jenkins/workspace/k8s/token.yml }}"
        state: present
      delegate_to: localhost
 
