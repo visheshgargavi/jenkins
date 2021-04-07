@@ -109,7 +109,7 @@
 
   -  name: "Adding token to a File"
      lineinfile:
+       path: token.sh
        line: "{{ token_result.stdout }}"  
-       dest: "{{ join-command.sh }}"
        state: present
      delegate_to: localhost
