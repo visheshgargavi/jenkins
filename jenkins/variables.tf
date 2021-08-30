@@ -6,7 +6,7 @@ variable "token" {
 
 variable "repo_name" {
   type = string
-  default = "Ansible-Internship-Project"
+  default = "jenkins"
   description = "Repository Name of Github"
 }
 
